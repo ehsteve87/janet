@@ -447,7 +447,7 @@ function startKeepAlive() {
     setInterval(function(){
         var options={
             host: "discord-janet.herokuapp.com",
-            port: 80,
+            port: process.env.PORT,
             path: '/'
         };
         http.get(options, function(res) {
@@ -464,6 +464,9 @@ function startKeepAlive() {
     }, 19 * 60 * 1000); //load every 19 minutes
 }
 startKeepAlive();
+
+app.listen(process.env.PORT);
+
 
 
 //https://www.youtube.com/watch?v=9CDPw1lCkJ8
