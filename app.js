@@ -234,12 +234,12 @@ bot.on("message", message => {
         }
       
         //Ron
-        if (message.content.toLowerCase().slice(0,4) === "ron:") {
-            message.channel.send("Ron Howard:" + message.content.slice(4));
-            message.delete({options: {timeout: 30000}});
-            console.log("It was Arrested Development.");
-            console.log("author id: " + message.author.discriminator);
-        }
+        // if (message.content.toLowerCase().slice(0,4) === "ron:") {
+        //     message.channel.send("Ron Howard:" + message.content.slice(4));
+        //     message.delete({options: {timeout: 30000}});
+        //     console.log("It was Arrested Development.");
+        //     console.log("author id: " + message.author.discriminator);
+        // }
   
         //Leap of Faith
         if (message.content.toLowerCase().includes("leap of faith")) {
