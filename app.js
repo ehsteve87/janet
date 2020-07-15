@@ -441,18 +441,34 @@ bot.login(process.env.BOT_TOKEN, () => {
 
 
 //This block of code is to continually ping the server to keep the site awake
-const http = require('http');
-app.get("/", (request, response) => {
-    response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-// setInterval(() => {
-//     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-// }, 280000);
+var http = require('http');
+
+function startKeepAlive() {
+    setInterval(function(){
+        var options={
+            host: "discord-janet.herokuapp.com",
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk){
+                try{
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err){
+            console.log("Error: " + err.message);
+        });
+    }, 19 * 60 * 1000); //load every 19 minutes
+}
+startKeepAlive();
 
 
 //https://www.youtube.com/watch?v=9CDPw1lCkJ8
 //https://anidiotsguide_old.gitbooks.io/discord-js-bot-guide/content/other-guides/hosting-on-glitchcom.html
+//https://dzone.com/articles/happy-apps-how-to-prevent-a-heroku-dyno-from-idlin#:~:text=When%20one%20of%20your%20Heroku,by%20running%20a%20custom%20function.
   
   
 }); //this closes the db.once function
