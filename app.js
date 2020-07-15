@@ -441,11 +441,11 @@ bot.login(process.env.BOT_TOKEN, () => {
 
 
 //This block of code is to continually ping the server to keep the site awake
-// const http = require('http');
-// app.get("/", (request, response) => {
-//     response.sendStatus(200);
-// });
-// app.listen(process.env.PORT);
+const http = require('http');
+app.get("/", (request, response) => {
+    response.sendStatus(200);
+});
+app.listen(process.env.PORT);
 // setInterval(() => {
 //     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 // }, 280000);
