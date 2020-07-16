@@ -151,6 +151,10 @@ function congratCycle() {
     congratCounter = (congratCounter % congratsArray.length + 1);
 }
 
+app.get("/", (req, res) => {
+    return res.send("Hello!");
+});
+
 //Route for GifList page
 app.get("/gifList", function(req, res){
   Gif.find({}, function(err, gifs){
@@ -440,30 +444,30 @@ bot.login(process.env.BOT_TOKEN, () => {
 });
 
 
-//This block of code is to continually ping the server to keep the site awake
-var http = require('http');
+// //This block of code is to continually ping the server to keep the site awake (didn't work)
+// var http = require('http');
 
-function startKeepAlive() {
-    setInterval(function(){
-        var options={
-            host: "discord-janet.herokuapp.com",
-            port: process.env.PORT,
-            path: '/'
-        };
-        http.get(options, function(res) {
-            res.on('data', function(chunk){
-                try{
-                    console.log("HEROKU RESPONSE: " + chunk);
-                } catch (err) {
-                    console.log(err.message);
-                }
-            });
-        }).on('error', function(err){
-            console.log("Error: " + err.message);
-        });
-    }, 19 * 60 * 1000); //load every 19 minutes
-}
-startKeepAlive();
+// function startKeepAlive() {
+//     setInterval(function(){
+//         var options={
+//             host: "discord-janet.herokuapp.com",
+//             port: process.env.PORT,
+//             path: '/'
+//         };
+//         http.get(options, function(res) {
+//             res.on('data', function(chunk){
+//                 try{
+//                     console.log("HEROKU RESPONSE: " + chunk);
+//                 } catch (err) {
+//                     console.log(err.message);
+//                 }
+//             });
+//         }).on('error', function(err){
+//             console.log("Error: " + err.message);
+//         });
+//     }, 19 * 60 * 1000); //load every 19 minutes
+// }
+// startKeepAlive();
 
 app.listen(process.env.PORT);
 
