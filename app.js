@@ -412,7 +412,7 @@ if (callExpression.test(message.content)){
 }
       
 if (message.content.toLowerCase() == "giflist"){
-  message.channel.send("http://quirky-beret.glitch.me/giflist");
+  message.channel.send("http://discord-janet.herokuapp.com/giflist");
       //This is what gifList USED to do.
       // Gif.find({}, function(err, gifs){
       //   var objectList = Object.values(gifs);
