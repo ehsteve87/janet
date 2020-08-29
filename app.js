@@ -272,15 +272,7 @@ bot.on("message", message => {
         if (message.content.toLowerCase() === "authortest") {
             message.channel.send(bot.guilds.get('456875845483757568').members.get(message.author).toString());
             console.log(bot.guilds.get('456875845483757568').members.get(message.author));
-        }
-      
-        //Trump (temporary)  
-        if (message.content.toLowerCase().includes("trump")) {
-            var gif = new MessageAttachment("https://thumbs.gfycat.com/SmoggyHilariousBaiji-size_restricted.gif");
-            message.channel.send(gif);
-            console.log("Should we bow? Yeah, he's a king.");
-        }
-      
+        }  
 
         //Minesweeper
         if (message.content.toLowerCase() === "minesweeper") {
