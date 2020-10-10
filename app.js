@@ -185,7 +185,7 @@ bot.on("message", message => {
         }
       
         //Triggered
-        if (message.content.toLowerCase().includes("triggered.gif")) {
+        if (message.content.toLowerCase() === "triggered.gif") {
             var triggeredGif = new MessageAttachment(triggerArray[triggerCounter - 1]);
             message.channel.send(triggeredGif);
             console.log("You didn't even warn me!");
