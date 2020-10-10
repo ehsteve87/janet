@@ -24,7 +24,7 @@ var triggerArray = require("./modules/triggered");
 
 var Gif = require("./modules/gifSchema");
 
-var taken = ["cavdance.gif", "word.gif", "cap.gif", "punch.gif", "facepalm.gif", "hi5.gif"];
+var taken = ["cavdance.gif", "word.gif", "cap.gif", "punch.gif", "facepalm.gif", "hi5.gif", "triggered.gif"];
 
 //MongoDB stuff!**************************************
 var uri = process.env.DB_URL;
@@ -362,6 +362,10 @@ bot.on("message", message => {
                          message.channel.send("https://www.youtube.com/watch?v=6t1vaF50Ks0");
                          break;
 
+                    case "9070": //Todd
+                        message.channel.send("Chocolate boxes");
+                        break;
+
                      case "4751": //Response Bot
                          break;
 
@@ -435,7 +439,8 @@ if (message.content.toLowerCase() == "giflist"){
 
         //This one contains the index
         if (message.content.toLowerCase() === "janet" || message.content.toLowerCase() === "response bot") {
-            var responses = "Hi, I'm Janet! \ncap.gif \ncavdance.gif \nCongratulations! \n!dab \necho [text] \nfacepalm.gif \ngifList \nHappy Birthday! \n hi5.gif \nLink? \nMinesweeper \nNerds! \npunch.gif \nRon: [text] \nSean! \nword.gif \n!y";
+            var responses = "Hi, I'm Janet! \ncap.gif \ncavdance.gif \nCongratulations! \n!dab \necho [text] \nfacepalm.gif " +
+            "\ngifList \nHappy Birthday! \n hi5.gif \nLink? \nMinesweeper \nNerds! \npunch.gif \nRon: [text] \nSean! \ntriggered.gif \nword.gif \n!y";
             message.channel.send(responses);
             console.log("Glad I could help.");
         }
