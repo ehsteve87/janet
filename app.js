@@ -20,6 +20,7 @@ var {MessageAttachment} = require("discord.js");
 
 var congratsArray = require("./modules/congratulations");
 var facepalmArray = require("./modules/facepalm");
+var triggerArray = require("./modules/triggered");
 
 var Gif = require("./modules/gifSchema");
 
@@ -146,6 +147,7 @@ function cycle(i, array) {
 
 var congratCounter = 1;
 var congratInterval = setInterval(congratCycle, 30000);
+var triggerCounter = 1;
 
 function congratCycle() {
     congratCounter = (congratCounter % congratsArray.length + 1);
@@ -182,6 +184,15 @@ bot.on("message", message => {
             console.log(congratCounter);
         }
       
+        //Triggered
+        if (message.content.toLowerCase().includes("triggered.gif")) {
+            var triggeredGif = new MessageAttachment(triggerArray[triggerCounter - 1]);
+            message.channel.send(triggeredGif);
+            console.log("You didn't even warn me!");
+            triggerCounter = cycle(triggerCounter, triggerArray);
+            console.log(triggerCounter);
+        }
+
         //Cavan Dance
         if (message.content.toLowerCase().includes("cavdance.gif")) {
             var cavGif = new MessageAttachment("https://cdn.glitch.com/08e88dba-4367-4844-909a-786d085467a9%2FCavan.gif");
