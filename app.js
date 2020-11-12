@@ -271,6 +271,13 @@ bot.on("message", message => {
             console.log(typeof message.author.discriminator);
         }
 
+        //Sound
+        if (message.content.toLowerCase().includes("new record") || message.content.toLowerCase().includes("new lap record")) {
+            var sound = new Discord.MessageAttachment("https://cdn.discordapp.com/attachments/550428943501623298/776528304743776266/it_s_a_new_lap_record_-3498164912892836578_1.mp3");
+            message.channel.send(sound);
+            console.log("It's a new lap record!");
+        }
+
         //Punch!  
         if (message.content.toLowerCase() === "punch.gif") {
             var seanPicture = new MessageAttachment("https://cdn.glitch.com/08e88dba-4367-4844-909a-786d085467a9%2Fmarvelpunch.gif");
