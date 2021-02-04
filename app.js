@@ -426,7 +426,7 @@ if (callExpression.test(message.content)){
 }
       
 if (message.content.toLowerCase() == "giflist"){
-  message.channel.send("http://discord-janet.herokuapp.com/giflist");
+  message.channel.send("https://docs.google.com/spreadsheets/d/1qbsULha1vF6fX4NtEAWd16hPfmmqCsFqKv4yLXP4yek/edit?usp=sharing");
       //This is what gifList USED to do.
       // Gif.find({}, function(err, gifs){
       //   var objectList = Object.values(gifs);
