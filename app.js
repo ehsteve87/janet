@@ -373,6 +373,10 @@ bot.on("message", message => {
                         message.channel.send("Chocolate boxes");
                         break;
 
+                    case "7947": //Kayla
+                        message.channel.send("https://youtu.be/S-LRITaHUbI");
+                        break;
+
                      case "4751": //Response Bot
                          break;
 
