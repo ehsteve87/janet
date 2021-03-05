@@ -369,6 +369,10 @@ bot.on("message", message => {
                          message.channel.send("https://www.youtube.com/watch?v=6t1vaF50Ks0");
                          break;
 
+                    case "5985": //Dennis
+                        message.channel.send("https://www.youtube.com/watch?v=NkoRl5CZhF8");
+                        break;
+
                     case "9070": //Todd
                         message.channel.send("Chocolate boxes");
                         break;
