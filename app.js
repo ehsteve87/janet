@@ -238,7 +238,7 @@ bot.on("message", message => {
             console.log("author id: " + message.author.discriminator);
         }
         //High Five
-        if (message.content.toLowerCase() === "hi5.gif" || message.content.toLowerCase().contains("janet, hi5") || message.content.toLowerCase().contains("janet, high five")) {
+        if (message.content.toLowerCase() === "hi5.gif" || message.content.toLowerCase().includes("janet, hi5") || message.content.toLowerCase().includes("janet, high five")) {
             var pic = new MessageAttachment("https://66.media.tumblr.com/f9aa4cf7be5072dd8dfd4ce73597a474/tumblr_oyee7p3N351wtl4k2o2_250.gif");
             message.channel.send(pic).then(
             setTimeout(function () {
